@@ -31,7 +31,7 @@ The project develops a web app which can be used to classify disaster messages (
 
 ## 4. Running Instructions
 1. From the current working directory, run the following command: ``` python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db```
-2. From the current working directory, run the following command: ```python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl```
+2. From the current working directory, run the following command: ``python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl```
 2. Run the following command in the app directory: ```python run.py```
 3. Go to http://localhost:3001/
 
