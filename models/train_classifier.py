@@ -29,15 +29,15 @@ warnings.simplefilter('ignore')
 
 
 def load_data(database_filepath):
-    """Load and merge messages and categories datasets
+    """This function loads the messages and categories datasets and merges them
     
     Args:
-    database_filename: string. Filename for SQLite database containing cleaned message data.
+    database_filename: a string with the file name of the SQLite database that contains the cleaned message data.
        
     Returns:
-    X: dataframe. Dataframe containing features dataset.
-    Y: dataframe. Dataframe containing labels dataset.
-    category_names: list of strings. List containing category names.
+    X: it is a dataframe that contains the dataset with the features.
+    Y: it is a dataframe that contains the dataset with the labels
+    category_names: this is a list of strings that contains the category names.
     """
     # Load data from database
     engine = create_engine('sqlite:///' + database_filepath)
@@ -53,13 +53,13 @@ def load_data(database_filepath):
     return X, Y, category_names
 
 def tokenize(text):
-    """Normalize, tokenize and stem text string
+    """This function normalizes, tokenizes and stem the text strings
     
     Args:
-    text: string. String containing message for processing
+    text: strings that contains messages to be processed
        
     Returns:
-    stemmed: list of strings. List containing normalized and stemmed word tokens
+    stemmed: a list of strings which contain the normalized and stemmed word tokens
     """
     # Convert text to lowercase and remove punctuation
     text = re.sub(r"[^a-zA-Z0-9]", " ", text.lower())
@@ -156,7 +156,7 @@ def get_eval_metrics(actual, predicted, col_names):
 
 
 def evaluate_model(model, X_test, Y_test, category_names):
-    """Returns test accuracy, precision, recall and F1 score for fitted model
+    """This function returns test accuracy, precision, recall and F1 score for fitted model
     
     Args:
     model: model object. Fitted model object.
@@ -176,11 +176,11 @@ def evaluate_model(model, X_test, Y_test, category_names):
     
 
 def save_model(model, model_filepath):
-    """Pickle fitted model
+    """A pickle of the fitted model
     
     Args:
-    model: model object. Fitted model object.
-    model_filepath: string. Filepath for where fitted model should be saved
+    model: a model object with the fitted model.
+    model_filepath: a string of the filepath where the fitted model will be saved
     
     Returns:
     None
@@ -190,28 +190,28 @@ def save_model(model, model_filepath):
 def main():
     if len(sys.argv) == 3:
         database_filepath, model_filepath = sys.argv[1:]
-        print('Loading data...\n    DATABASE: {}'.format(database_filepath))
+        print('Loading the data...\n    DATABASE: {}'.format(database_filepath))
         X, Y, category_names = load_data(database_filepath)
         X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2)
         
-        print('Building model...')
+        print('Building the model...')
         model = build_model()
         
-        print('Training model...')
+        print('Training the model...')
         model.fit(X_train, Y_train)
         
-        print('Evaluating model...')
+        print('Evaluating the model...')
         evaluate_model(model, X_test, Y_test, category_names)
 
-        print('Saving model...\n    MODEL: {}'.format(model_filepath))
+        print('Saving the model...\n    MODEL: {}'.format(model_filepath))
         save_model(model, model_filepath)
 
         print('Trained model saved!')
 
     else:
-        print('Please provide the filepath of the disaster messages database '\
-              'as the first argument and the filepath of the pickle file to '\
-              'save the model to as the second argument. \n\nExample: python '\
+        print('You need to provide, as the first argument, the disaster messages database's filepath '\
+              'and then the filepath of the pickle file, as the second argument, in order to '\
+              'save the model. \n\nAn example: python '\
               'train_classifier.py ../data/DisasterResponse.db classifier.pkl')
 
 
