@@ -23,20 +23,15 @@ The project develops a web app which can be used to classify disaster messages (
 - ETL Pipeline Preparation.ipynb: The code contained in this Jupyter notebook is used to develop process_data.py. Its input are csv files that contain message data and message categories. Through data cleaning steps, a SQLite database is created, which contains a merged and cleaned version of the data.
 - messages.csv and categories.csv: these are the two files that are used as raw input by the previous notebook.
 - ML Pipeline Preparation.ipynb: This Jupyter notebook's code is used to develop train_classifier.py. It takes the SQLite database that is produced by the previous notebook and uses its data to train and tune a Random Forest ML model for categorizing the messages. In addition test evaluation metrics are are generated as part of the training process. Its output is a pickle file containing the fitted model. 
+- messages.db: this is the database created by SQLite.
 - process_data.py: This is the file which is effectively run by the app for cleaning and preparing the data.
 - train_classifier.py: This is the file which is effectively run by the app for running the ML model
 - data: The folder contains the sample messages and categories datasets in csv format.
 - app: This folder contains all of the files necessary to run and render the web app.
 
 ## 4. Running Instructions
-### Run process_data.py
-1. Save the data folder in the current working directory and process_data.py in the data folder.
-2. From the current working directory, run the following command: ``` python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db```
-### Run train_classifier.py
-1. In the current working directory, create a folder called 'models' and save train_classifier.py in this.
+1. From the current working directory, run the following command: ``` python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db```
 2. From the current working directory, run the following command: ```python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl```
-### Run the web app
-1. Save the app folder in the current working directory.
 2. Run the following command in the app directory: ```python run.py```
 3. Go to http://localhost:3001/
 
