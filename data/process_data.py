@@ -5,7 +5,7 @@ import numpy as np
 from sqlalchemy import create_engine
 
 def load_data(messages_filepath, categories_filepath):
-    """This functions loads data messages and categories datasets and then merges them
+    """This functions loads data messages and categories datasets and then merges them.
     
     Args:
     messages_filepath: it is a string referring to the filepath of the csv file that contains the messages dataset.
@@ -76,12 +76,12 @@ def clean_data(df):
 
 
 def save_data(df, database_filename):
-    """Save cleaned data into an SQLite database.
+    """This function saves cleaned data into an SQLite database.
     
     Args:
-    df: dataframe. Dataframe containing cleaned version of merged message and 
+    df: a dataframe that contains the cleaned version of the merged message and 
     categories data.
-    database_filename: string. Filename for output database.
+    database_filename: a string with the filename of the output database.
        
     Returns:
     None
@@ -107,10 +107,10 @@ def main():
         print('The cleaned data has been saved to a database!')
     
     else:
-        print('Please provide the filepaths of the messages and categories '\
-              'datasets as the first and second argument respectively, as '\
-              'well as the filepath of the database to save the cleaned data '\
-              'to as the third argument. \n\nExample: python process_data.py '\
+        print('You must provide the messages and the categories' datasets filepath '\
+              'as, respectivel,y the first and second argument respectively. In addition, '\
+              'supply, as the third argument, the filepath of the database to save the cleaned data. '\
+              '\n\nExample: python process_data.py '\
               'disaster_messages.csv disaster_categories.csv '\
               'DisasterResponse.db')
 
