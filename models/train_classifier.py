@@ -40,12 +40,12 @@ def load_data(database_filepath):
     category_names: list of strings. List containing category names.
     """
     # Load data from database
-    engine = create_engine('sqlite:///Messages.db')
+    engine = create_engine('sqlite:///' + database_filepath)
     df = pd.read_sql("SELECT * FROM Messages", engine)
     
     # Create X and Y datasets
     X = df['message']
-    Y = df.drop(['index', 'message', 'original', 'genre'], axis = 1)
+    Y = df.drop(['id', 'message', 'original', 'genre'], axis = 1)
     
     # Create list containing all category names
     category_names = list(Y.columns.values)
