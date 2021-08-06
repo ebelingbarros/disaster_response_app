@@ -20,11 +20,12 @@ The code presented in this repository was written in Python and Html. To work, i
 The project develops a web app which can be used to classify disaster messages (e.g. a hurricane or a flood) into several categories. As such, it could potentially be used by disaster workers to direct the obtained messages to the pertinent aid agencies. For this purposes, the app contains a Machine Learning model that categorizes the new messages received.
 
 ## 3. File Descriptions
-- process_data.py: This code takes as its input csv files containing message data and message categories (labels), and creates an SQLite database containing a merged and cleaned version of this data.
-- train_classifier.py: This code takes the SQLite database produced by process_data.py as an input and uses the data contained within it to train and tune a ML model for categorizing messages. The output is a pickle file containing the fitted model. Test evaluation metrics are also printed as part of the training process.
-- ETL Pipeline Preparation.ipynb: The code and analysis contained in this Jupyter notebook was used in the development of process_data.py. process_data.py effectively automates this notebook.
-- ML Pipeline Preparation.ipynb: The code and analysis contained in this Jupyter notebook was used in the development of train_classifier.py. In particular, it contains the analysis used to tune the ML model and determine which algorithm to use. train_classifier.py effectively automates the model fitting process contained in this notebook.
-- data: This folder contains sample messages and categories datasets in csv format.
+- ETL Pipeline Preparation.ipynb: The code contained in this Jupyter notebook is used to develop process_data.py. Its input are csv files that contain message data and message categories. Through data cleaning steps, a SQLite database is created, which contains a merged and cleaned version of the data.
+- messages.csv and categories.csv: these are the two files that are used as raw input by the previous notebook.
+- ML Pipeline Preparation.ipynb: This Jupyter notebook's code is used to develop train_classifier.py. It takes the SQLite database that is produced by the previous notebook and uses its data to train and tune a Random Forest ML model for categorizing the messages. In addition test evaluation metrics are are generated as part of the training process. Its output is a pickle file containing the fitted model. 
+- process_data.py: This is the file which is effectively run by the app for cleaning and preparing the data.
+- train_classifier.py: This is the file which is effectively run by the app for running the ML model
+- data: The folder contains the sample messages and categories datasets in csv format.
 - app: This folder contains all of the files necessary to run and render the web app.
 
 ## 4. Running Instructions
