@@ -75,16 +75,15 @@ def tokenize(text):
     
     return stemmed
 
-# Define performance metric for use in grid search scoring object
 def performance_metric(y_true, y_pred):
-    """Calculate median F1 score for all of the output classifiers
+    """This function calculates a median F1 score for all of the output classifiers
 
         Args:
-        y_true: array. Array containing actual labels.
-        y_pred: array. Array containing predicted labels.
+        y_true: an array containing the actual labels.
+        y_pred: an array containing the predicted labels.
 
         Returns:
-        score: float. Median F1 score for all of the output classifiers
+        score: a float with the Median F1 score for all of the output classifiers
         """
     f1_list = []
     for i in range(np.shape(y_pred)[1]):
@@ -95,14 +94,14 @@ def performance_metric(y_true, y_pred):
     return score
     
 def build_model():
-    """Build a machine learning pipeline
+    """This function builds the machine learning pipeline
     
     Args:
     None
        
     Returns:
-    cv: gridsearchcv object. Gridsearchcv object that transforms the data, creates the 
-    model object and finds the optimal model parameters.
+    cv: a gridsearchcv objec that that creates a 
+    model object and determines optimal model parameters.
     """
     # Create pipeline
     pipeline = Pipeline([
@@ -126,16 +125,16 @@ def build_model():
     return cv
 
 def get_eval_metrics(actual, predicted, col_names):
-    """Calculate evaluation metrics for ML model
+    """This function calculates the evaluation metrics for the ML model
     
     Args:
-    actual: array. Array containing actual labels.
-    predicted: array. Array containing predicted labels.
-    col_names: list of strings. List containing names for each of the predicted fields.
+    actual: an array that containins the actual labels.
+    predicted: an array that contains the predicted labels.
+    col_names: a list of strings that contains the names for each of the predicted fields.
        
     Returns:
-    metrics_df: dataframe. Dataframe containing the accuracy, precision, recall 
-    and f1 score for a given set of actual and predicted labels.
+    metrics_df: a aataframe that contains the accuracy, precision, recall 
+    and f1 score for a set of actual and predicted labels.
     """
     metrics = []
     
