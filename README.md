@@ -1,12 +1,23 @@
 # Disaster Response Web App
 
-## 1. Installation
-The code contained in this repository was written in HTML and Python 3, and requires the following Python packages: json, plotly, pandas, nltk, flask, sklearn, sqlalchemy, sys, numpy, re, pickle, warnings.
+## 1. Libraries
+The code presented in this repository was written in Python and Html. To work, it requires the following Python packages: 
+
+- json
+- plotly 
+- pandas 
+- nltk
+- flask
+- sklearn
+- sqlalchemy
+- sys
+- numpy
+- re
+- pickle
+- warnings
 
 ## 2. Project Overview
-This repository contains code for a web app which an emergency worker could use during a disaster event (e.g. an earthquake or hurricane), to classify a disaster message into several categories, in order that the message can be directed to the appropriate aid agencies.
-
-The app uses a ML model to categorize any new messages received, and the repository also contains the code used to train the model and to prepare any new datasets for model training purposes.
+The project develops a web app which can be used to classify disaster messages (e.g. a hurricane or a flood) into several categories. As such, it could potentially be used by disaster workers to direct the obtained messages to the pertinent aid agencies. For this purposes, the app contains a Machine Learning model that categorizes the new messages received.
 
 ## 3. File Descriptions
 - process_data.py: This code takes as its input csv files containing message data and message categories (labels), and creates an SQLite database containing a merged and cleaned version of this data.
@@ -34,8 +45,5 @@ The app uses a ML model to categorize any new messages received, and the reposit
   <img width="97%" height="97%" src="https://github.com/ebelingbarros/disaster_response_app/blob/main/screen_example.png"> 
 </p> 
 
-## 6. Warning
-The datasets included in this repository are very unbalanced, with very few positive examples for several message categories. In some cases, the proportion of positive examples is less than 5%, or even less than 1%. In such cases, even though the classifier accuracy is very high (since it tends to predict that the message does not fall into these categories), the classifier recall (i.e. the proportion of positive examples that were correctly labelled) tends to be very low. As a result, care should be taken if relying on the results of this app for decision making purposes.
-
-## 7. Licensing, Authors, Acknowledgements
+## 6. Licensing, Authors, Acknowledgements
 This app was completed as part of the Udacity Data Scientist Nanodegree. Code templates and data were provided by Udacity. The data was originally sourced by Udacity from Figure Eight.
