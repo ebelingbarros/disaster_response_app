@@ -5,14 +5,14 @@ import numpy as np
 from sqlalchemy import create_engine
 
 def load_data(messages_filepath, categories_filepath):
-    """Load and merge messages and categories datasets
+    """This functions loads data messages and categories datasets and then merges them
     
     Args:
-    messages_filepath: string. Filepath for csv file containing messages dataset.
-    categories_filepath: string. Filepath for csv file containing categories dataset.
+    messages_filepath: it is a string referring to the filepath of the csv file that contains the messages dataset.
+    categories_filepath: it is a string referring to the filepath of the csv file that contains the categories dataset.
        
     Returns:
-    df: dataframe. Dataframe containing merged content of messages and categories datasets.
+    df: Dataframe with the merged content of the messages and categories datasets.
     """
     
     # Load messages dataset
@@ -27,14 +27,14 @@ def load_data(messages_filepath, categories_filepath):
     return df
 
 def clean_data(df):
-    """Clean dataframe by removing duplicates and converting categories from strings 
-    to binary values.
+    """This function is used to clean dataframe through the removal of the duplicates and by the conversion of the received categories from strings 
+    to binary values (0 or 1)
     
     Args:
-    df: dataframe. Dataframe containing merged content of messages and categories datasets.
+    df: a dataframe which contains the merged content of messages and categories datasets.
        
     Returns:
-    df: dataframe. Dataframe containing cleaned version of input dataframe.
+    df: a dataframe that contains a cleaned version of the inputted dataframe.
     """
     
     # Create a dataframe of the 36 individual category columns
@@ -94,17 +94,17 @@ def main():
 
         messages_filepath, categories_filepath, database_filepath = sys.argv[1:]
 
-        print('Loading data...\n    MESSAGES: {}\n    CATEGORIES: {}'
+        print('Loading the data...\n    MESSAGES: {}\n    CATEGORIES: {}'
               .format(messages_filepath, categories_filepath))
         df = load_data(messages_filepath, categories_filepath)
 
-        print('Cleaning data...')
+        print('Cleaning the data...')
         df = clean_data(df)
         
-        print('Saving data...\n    DATABASE: {}'.format(database_filepath))
+        print('Saving the data...\n    DATABASE: {}'.format(database_filepath))
         save_data(df, database_filepath)
         
-        print('Cleaned data saved to database!')
+        print('The cleaned data has been saved to a database!')
     
     else:
         print('Please provide the filepaths of the messages and categories '\
