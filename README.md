@@ -40,7 +40,7 @@ The project develops a web app which can be used to classify disaster messages (
 This is a screenshot of the app, in which the generic message "Please help me" is typed. Although this message is rather useless from the point of view of the app's potential user, it shows that the app does a reasonably good job in categorizing the message as a request towards receiving aid.
 
 <p align="center">
-  <img width="97%" height="97%" src="https://github.com/ebelingbarros/disaster_response_app/blob/main/screen_example.png"> 
+  <img width="97%" height="97%" src="https://github.com/ebelingbarros/disaster_response_app/blob/main/prediction.png"> 
 </p> 
 
 ## 6. Licensing, Authors, Acknowledgements
