@@ -14,7 +14,6 @@ The code presented in this repository was written in Python and Html. To work, i
 - numpy
 - re
 - pickle
-- warnings
 
 ## 2. Project Overview
 The project develops a web app which can be used to classify disaster messages (e.g. a hurricane or a flood) into several categories. As such, it could potentially be used by disaster workers to direct the obtained messages to the pertinent aid agencies. For this purpose, the app contains a Machine Learning model that categorizes the new messages received.
