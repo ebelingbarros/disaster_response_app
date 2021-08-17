@@ -36,6 +36,8 @@ The project develops a web app which can be used to classify disaster messages (
 
 ## 5. Screenshots
 
+This is a screenshot of the evaluation metrics. The results are fairly good.
+
 <p align="center">
   <img width="97%" height="97%" src="https://github.com/ebelingbarros/disaster_response_app/blob/main/screenshot.png"> 
 </p> 
