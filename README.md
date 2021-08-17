@@ -39,13 +39,13 @@ The project develops a web app which can be used to classify disaster messages (
 This is a screenshot of the evaluation metrics. The results are fairly good.
 
 <p align="center">
-  <img width="97%" height="97%" src="https://github.com/ebelingbarros/disaster_response_app/blob/main/screenshot.png"> 
+  <img width="93%" height="93%" src="https://github.com/ebelingbarros/disaster_response_app/blob/main/screenshot.png"> 
 </p> 
 
-This is a screenshot of the app, in which the generic message "Please help me" is typed. Although this message is rather useless from the point of view of the app's potential user, it shows that the app does a reasonably good job in categorizing the message as a request towards receiving aid.
+This is a screenshot of the app, which is tested with the message "over one million people are currently evacuating as the water level continues to rise". The model does a solid job in predicting that the referred message belongs either to the categories "aid related", "refugees", "weather related" or "floods".
 
 <p align="center">
-  <img width="97%" height="97%" src="https://github.com/ebelingbarros/disaster_response_app/blob/main/prediction.png"> 
+  <img width="93%" height="93%" src="https://github.com/ebelingbarros/disaster_response_app/blob/main/prediction.png"> 
 </p> 
 
 ## 6. Licensing, Authors, Acknowledgements
