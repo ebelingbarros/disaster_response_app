@@ -109,9 +109,9 @@ def evaluate_model(model, X_test, Y_test, cat_names):
         precision = precision_score(Y_test.iloc[:, i].values, Y_pred[:, i], average='weighted')
         recall = recall_score(Y_test.iloc[:, i].values, Y_pred[:, i], average='weighted')
                 
-        evaluation_metrics.append([accuracy, precision, recall, f1])
+        evaluation_metrics.append([accuracy, f1, precision, recall])
                 
-    cols = ['Accuracy', 'Precision', 'Recall', 'F1']
+    cols = ['Accuracy', 'F1', 'Precision', 'Recall']
     evaluation_metrics_df = pd.DataFrame(data = evaluation_metrics, index = cat_names, columns = cols)
     
     print(evaluation_metrics_df)
