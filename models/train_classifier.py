@@ -102,7 +102,6 @@ def evaluate_model(model, X_test, Y_test, cat_names):
     Y_pred = model.predict(X_test)
     evaluation_metrics = []
     
-    # Calculate evaluation metrics for each set of labels
     for i in range(len(cat_names)):
         accuracy = accuracy_score(Y_test.iloc[:, i].values, Y_pred[:, i])
         f1 = f1_score(Y_test.iloc[:, i].values, Y_pred[:, i], average='weighted')
