@@ -39,7 +39,7 @@ The project develops a web app which can be used to classify disaster messages (
 This is a screenshot of the evaluation metrics. The results are fairly good.
 
 <p align="center">
-  <img width="80%" height="80%" src="https://github.com/ebelingbarros/disaster_response_app/blob/main/screenshot.png"> 
+  <img width="80%" height="80%" src="https://github.com/ebelingbarros/disaster_response_app/blob/main/metrics.png"> 
 </p> 
 
 This is a screenshot of the app, which is tested with the message "over one million people are currently evacuating as the water level continues to rise". The model does a solid job in predicting that the referred message belongs either to the categories "aid related", "refugees", "weather related" or "floods".
