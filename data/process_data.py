@@ -53,6 +53,9 @@ def clean_data(df):
 
     # drop duplicates
     df.drop_duplicates(inplace = True)
+
+    # drop rows where category "related" = 2
+    df = df.loc[df["related"] != 2]
     
     return df
 
