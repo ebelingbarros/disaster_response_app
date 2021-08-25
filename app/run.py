@@ -38,13 +38,18 @@ model = joblib.load("../models/classifier.pkl")
 @app.route('/index')
 def index():
     
-    # extract data needed for visuals
-    # TODO: Below is an example - modify to extract data for your own visuals
-    genre_counts = df.groupby('genre').count()['message']
+    # Calculate percentage distribution of message genres
+    genre_counts = df.groupby('genre').count()['message']/len(df)*100
+    genre_counts = genre_counts.sort_values(ascending = True)
     genre_names = list(genre_counts.index)
-    
+  
+
+     # Calculate percentage of messages with label = 1 per category
+    cat_names = df.drop(["index", "message", "original", "genre"], axis=1).columns
+    cat_share = df.drop(['index', 'message', 'original', 'genre'], axis = 1).sum()/len(df)*100
+    cat_share = cat_share.sort_values(ascending = True)
+
     # create visuals
-    # TODO: Below is an example - modify to create your own visuals
     graphs = [
         {
             'data': [
@@ -55,12 +60,30 @@ def index():
             ],
 
             'layout': {
-                'title': 'Distribution of Message Genres',
+                'title': 'Percentage distribution of message genres',
                 'yaxis': {
-                    'title': "Count"
+                    'title': "Percentage"
                 },
                 'xaxis': {
                     'title': "Genre"
+                }
+            }
+        },
+        {
+            'data': [
+                Bar(
+                    x=cat_names,
+                    y=cat_share
+                )
+            ],
+
+            'layout': {
+                'title': 'Percentage of messages with label = 1 per category',
+                'yaxis': {
+                    'title': "Percentage"
+                },
+                'xaxis': {
+                    'title': "Category"
                 }
             }
         }
