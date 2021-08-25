@@ -45,7 +45,7 @@ This is a screenshot of the evaluation metrics. The results are fairly good.
 This is a screenshot of the visualisations that are created by the app.
 
 <p align="center">
-  <img width="80%" height="80%" src="https://github.com/ebelingbarros/disaster_response_app/blob/main/visuals.png"> 
+  <img width="80%" height="80%" src="https://github.com/ebelingbarros/disaster_response_app/blob/main/visuals2.png"> 
 </p> 
 
 This is a screenshot of the app, which is tested with the message "over one million people are currently evacuating as the water level continues to rise". The model does a solid job in predicting that the referred message belongs either to the categories "aid related", "refugees", "weather related" or "floods".
